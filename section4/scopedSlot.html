@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+<div id="app">
+  <!-- 子コンポーネントには、v-slotディレクティブには引数として子コンポーネントのスロットプロパティが
+    格納されているオブジェクトを参照するための名前を指定します。
+    スロットの名前には、子コンポーネントのslot要素にname属性で設定した名前、
+    または名前を設定していない場合は「default」を指定。-->
+  <my-com>
+    <template>
+      {{ player }}
+      {{ player.member.name}}
+    </template>
+  </my-com>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    let myCom = {//子コンポーネント側にslotタグでv-bindする
+      template:`<div>
+      <slot>ここが差し替わる</slot></div>`,
+      data(){
+        return{
+          member: {
+            name:'堂安',
+            height:170,
+            hobby:'サッカー'
+          }
+        }
+      }
+    }
+
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+        }
+      },
+      //myComを定義
+      
+    })
+  </script>
+  
+</body>
+</html>
+<!--子コンポーネントのスロットにデータ（値）をバインドし、
+  バインドしたデータに親コンポーネントからアクセスすることができるようにする機能-->

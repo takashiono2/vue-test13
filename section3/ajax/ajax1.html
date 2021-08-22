@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="getDogImage">画像を取得</button>
+    <!--imgタグで画像表示-->
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>//https://dog.ceo/dog-api/より
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const options = {}//取得
+
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+          dogImage: ''
+        }
+      },
+      //非同期関数getDogImage()、fetch(url, options)でデータを取得するまで待つ
+      //fetchで所得した値は、promiseオブジェクトになるので、thenメソッドでつなげる
+      //respose.json()でオブジェクト形式に変換する
+      //「created」→DOMがまだ作られていない状態「mounted」→DOMが作成された直後の状態
+    })
+  </script>
+  
+</body>
+</html>

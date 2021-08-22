@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+      width:800px;
+      margin:0 auto;
+      border: 1px red solid;
+    }
+    .child{
+      width:30%;
+      margin:0 auto;
+      border: 1px blue solid;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="app" class="parent">
+    <!--inputした時、parentValueを参照、class="child"とする-->
+      <custom-input></custom-input>
+      {{ parentValue }}
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    let customInput = {
+      //ローカルコンポーネントcustomInputで、データは、Stringをもつ
+      template:`<div>
+      <input :value="value" @input="childEvent">
+      </div>`,
+      methods:{
+        //childEventメソッドがカスタムinputに値を渡す
+      }
+    }
+
+    let app = new Vue({
+      el:'#app',
+      //customInputを設定、データは、parentValue:''を返す
+    })
+  </script>
+  
+</body>
+</html>

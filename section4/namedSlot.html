@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+      width:800px;
+      margin:0 auto;
+      border: 1px red solid;
+    }
+    .child{
+      width:30%;
+      margin:0 auto;
+      border: 1px blue solid;
+    }
+    </style>
+</head>
+<body>
+  
+
+<div id="app" class="parent">
+  <!--my-comカスタムコンポーネントclass="child"で囲む-->
+  <!--以下slot名をheader-->
+    <template >
+      ヘッダー
+    </template>
+    mainに入ります
+  <!--以下、slot名をfooter（省略形で）-->
+    <template>
+      フッター
+    </template>
+    ここもmainに入ります
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    let myCom = {
+      template:`<div>
+      <slot name="header">
+      header
+      </slot>
+      <slot name="default">main contents</slot>
+      <slot name="footer">
+      footer
+      </slot>
+      </div>`    
+      }
+
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+        }
+      },
+      //myComというコンポーネントを設定
+    })
+  </script>
+</body>
+</html>

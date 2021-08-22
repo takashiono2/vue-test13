@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+      width:800px;
+      margin:0 auto;
+      border: 1px red solid;
+    }
+    .child{
+      width:30%;
+      margin:0 auto;
+      border: 1px blue solid;
+    }
+    .grand_child{
+      width:20%;
+      margin:0 auto;
+      border: 1px green solid;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<div id="app" class="parent">
+  <child-component class="child">
+  </child-component>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    //eventBusインスタンスを設定
+
+    let grandChildComponent = {
+      template:`<div>
+      孫のコンポーネントです
+      <button>ボタン</button>
+      </div>`,
+      //testEventをクリックした時の、testEvent関数の設定、ボタンを押したら'孫のボタンです'を飛ばす
+      methods:{
+    }
+    let childComponent = {
+      template:`<div>
+      子のコンポーネント
+      <grand-child-component class="grand_child">
+      </grand-child-component></div>`,
+      //コンポーネントgrandChildComponentを設定
+    }
+
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+        }
+      },
+      //コンポーネントchildComponentを設定
+      },
+      mounted(){
+        //eventBusに対して、$onを使う。コンポーネント名は、eventBus-test
+        //コールバック関数は、引数testを受けて、testを出力
+      }
+    })
+  </script>
+  
+</body>
+</html>

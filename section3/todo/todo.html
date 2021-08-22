@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* ちらつき防止 */
+    {  }
+    /* リストの点を消す */
+    ul{}
+     /* テキストに横線 */
+    .done{}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!--テキストタイプ、newItem関数で制御-->
+    <>
+    <!--ボタンをクリックしたら追加、addItem関数で制御-->
+    <>追加</>
+    <!--query関数で制御-->
+    <>検索
+  
+    <ul>  <!--todoで配列、filteredListを使う-->
+      <li>  <!--チェックボックス-->
+        <><!--classも条件指定-->
+        <span>{{ todo.item }}</span>
+        <>削除</><!--deleteItemで削除-->
+      </li>
+    </ul>
+
+  </div><!-- 仮想DOM -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+      },
+      methods:{
+        addItem(){
+          }
+        },
+        }
+      },
+      computed:{//条件としてindexOfを使う
+        filteredList(){
+          let that = this
+          })
+        }
+      }
+    })
+  </script>
+  
+</body>
+
+</html>

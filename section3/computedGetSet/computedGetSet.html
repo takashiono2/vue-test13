@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>/*ちらつき解消*/
+   [v-cloak]{
+      display:none;
+    }
+    .error{
+      color: red;
+    }
+  </style>
+</head>
+<body><!--ちらつき解消-->
+  <div id="app" v-cloak>
+    <p v-if="error"><!--errorがあったら-->
+      <ul>
+        <li class="error">{{ error }}</li><!--error配列-->
+      </ul>
+    </p>
+    <form><!--送信する時、validate関数をつくる-->
+      氏名
+      {{ yourName }}
+      <input type="text" v-model="yourName"><!--"yourName"で紐付け computed で監視している値 -->
+      <br>
+      <!--errorクラスは、hasError.yourNameが存在したらひもづける-->
+      <p> {{ contact.yourName.length }} / 20</p>
+      <p v-show="" class="error">氏名は20文字以内で入力してください。</p>
+      
+      電話番号
+      <input type="tel" v-model.number="contact.tel"><!--数字をひもづける-->
+      <br>
+      メールアドレス
+      <input type="email" v-model.lazy.trim="contact.email"><!--スペースを削除、フォーム外れたらいかす-->
+      <br>
+      性別
+      <input type="radio" value="male" v-model="contact.gender">男性
+      <input type="radio" value="female" v-model="contact.gender">女性
+      <input type="radio" value="other" v-model="contact.gender">その他
+      <br>
+      年齢
+      <select v-model="contact.age">
+        <option>年齢を選択してください</option><!--ここはoption要素は無効-->
+        <option>10代</option>
+        <option>20代</option>
+        <option>30代</option>
+        <option>40代〜</option>
+      </select>
+      <br>
+      メッセージ
+      <textarea v-model="contact.message"></textarea>
+      <br>
+      このサイトを知った理由
+      <input type="checkbox" value="webサイト" v-model="contact.attracts">webサイト
+      <input type="checkbox" value="チラシ" v-model="contact.attracts">チラシ
+      <input type="checkbox" value="その他" v-model="contact.attracts">その他
+      <br>
+      注意事項に同意する
+      <input type="checkbox" v-model="contact.caution">
+      <br>
+      <!--送信ボタン-->
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+          contact: {
+            yourName: '',
+            tel: '',
+            email:'',
+            gender:'',
+            age:'',
+            message:'',
+            attracts: [],
+            caution: false
+          },
+      //データ追加errors:とhasError:
+        }
+      },
+      methods:{
+        validate(){
+          this.errors = []
+          if(){//pushを使う
+            ('氏名は必須です');
+            ('氏名は20文字以内で入力してください');
+            ('性別を選択してください');
+          }
+          if（）{
+          ('注意事項にチェックをいれてください');
+          }
+        //validate()関数
+        //場合分け、'氏名は必須です''氏名は20文字以内で入力してください''性別を選択してください'
+        //場合分け、'注意事項にチェックをいれてください'
+          if(!this.errors.length){
+            console.log('送信可能です')
+      },
+      // yourName処理、hasErrorをつかって、場合分け、ゲッターセッターを使う
+      computed:{//get return ,set return
+        yourName:{
+    })
+  </script>
+</body>
+</html>

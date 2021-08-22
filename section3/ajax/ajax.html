@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="getDogImage">画像を取得</button><!--クリックしたらgetDogImage関数を実行-->>
+    <img :src="dogImage">
+    <input type="text"><!--テキスト入力したら、watchTestを実行-->
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>  
+
+  <script>
+    let obj = {
+      a: 'テスト'
+    }
+  obj.b = 'あああ'
+  obj.c = test
+
+  function test(){ console.log('テスト')}
+
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const options = {//オプションはget}
+
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+          dogImage: '',
+          watchTest:''
+        }
+      },
+      methods:{
+        //非同期で、getDogImage()を実行、responseがあったオブジェクトを画像とする
+        //fetchで非同期ネットワークを取得、.thenでつなげる
+        getDogImage(){
+
+        }
+      },
+      wathch:{
+        watchTest(){
+          this.watchDogImage()
+        }
+      },
+
+          //DOMがまだ作られていない状態で、getDogImage()を実行
+          this.watchDogImage = _.debounce(this.getDogImage, 1000)
+      }
+    });
+  </script>
+  
+</body>
+</html>
