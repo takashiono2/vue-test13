@@ -50,9 +50,14 @@
     <li>#88$router と $route</li>
     <li>#89動的パラメータ+props その1</li>
     <li>#90動的パラメータ+props その2</li>
-    <li>#</li>
-    <li>#</li>
-    <li>#</li>
+    <li>#91動的パラメータ+props 補足</li>
+    <li>#92動的パラメータの補足 watch</li>
+    <li>#93リダイレクトと404ページ</li>
+    <li>#94ネストされたルート</li>
+    <li>#95名前付きrouter-view</li>
+    <li>#96トランジションを含めたルート</li>
+    <li>#97ナビゲーションガード</li>
+    <li>#98historyモードの補足</li>
   </ul>
 </details>
 

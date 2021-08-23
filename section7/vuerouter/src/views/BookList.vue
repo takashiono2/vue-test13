@@ -1,11 +1,8 @@
 <template>
   <div>
     <h1>本の一覧</h1>
-    <ul>
-      <li 
-      @click="showBookDetail(book.id)"
-      v-for="book in books" 
-      :key="book.id">
+    <ul><!--クリックした時、showBookDetail処理、book変数で配列-->
+      <li>
         {{ book.title}}
       </li>
     </ul>
@@ -26,16 +23,17 @@ export default {
       ]
     }
   },
+  //showBookDetail関数で処理、nameは名前付きルート
   methods:{
-    showBookDetail(id){
-      this.bookIndex = id - 1
+    
+      this.bookIndex = 
       console.log(this.bookIndex)
-      this.$router.push({
-        name:'Book',
+      this　　　　　　({
+        name:,
         params:{
-          id: this.books[this.bookIndex].id,
-          title: this.books[this.bookIndex].title,
-          content: this.books[this.bookIndex].content
+          id: 　　　　　　　　　.id,
+          title: 　　　　　　　.title,
+          content: 　　　　　　.content
         }
       })
     }

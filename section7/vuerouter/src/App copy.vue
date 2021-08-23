@@ -9,7 +9,7 @@
       <router-link to="/user/profile">User</router-link> |
     </div>
     <div class="blue-b">
-      <transition name="fade"><!--transitonのenterとleaveが同時におきないようrに-->
+      <transition name="fade" mode="out-in">
         <router-view/>
       </transition>
     </div>
@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style>/*scssを使うことを明示*/
+<style lang="scss">
 .fade{
   &-enter{
     transform: translate(-100px, 0);

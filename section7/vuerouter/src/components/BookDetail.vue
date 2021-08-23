@@ -9,15 +9,13 @@
 
 <script>
 export default {
-  name:'BookDetail',
+  name:'BookDetail',//以下、props（id、title,contentの型設定
   props:{
-    id: Number,
-    title: String,
-    content: String
+
   },
   data(){
     return{
-      bookIndex: this.$route.params.id -1,
+     //bookIndexをパラメータを使う
        books:[
         {id:1, title:'タイトル1', content:'本の内容1'},
         {id:2, title:'タイトル2', content:'本の内容2'},
@@ -25,9 +23,9 @@ export default {
       ]
     }
   },
-  created(){
+  {//コンポーネントが読み込まれるタイミングで生成
     if(this.$route.params.id > this.books.length){
-      this.$router.push('/book')
+  //'/book'へ飛ばしたい
     }
   }
 }

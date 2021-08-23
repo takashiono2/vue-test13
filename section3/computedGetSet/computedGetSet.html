@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 </head>
 <body><!--ちらつき解消-->
   <div id="app" v-cloak>
-    <p v-if="error"><!--errorがあったら-->
+    <p v-if=><!--errorがあったら-->
       <ul>
         <li class="error">{{ error }}</li><!--error配列-->
       </ul>
@@ -26,7 +26,7 @@
       <input type="text" v-model="yourName"><!--"yourName"で紐付け computed で監視している値 -->
       <br>
       <!--errorクラスは、hasError.yourNameが存在したらひもづける-->
-      <p> {{ contact.yourName.length }} / 20</p>
+      <p :class="{error: hasError.yourName}"> {{ contact.yourName.length }} / 20</p>
       <p v-show="" class="error">氏名は20文字以内で入力してください。</p>
       
       電話番号
@@ -60,7 +60,7 @@
       注意事項に同意する
       <input type="checkbox" v-model="contact.caution">
       <br>
-      <!--送信ボタン-->
+      <input type="submit"><!--送信ボタン-->
     </form>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
@@ -80,28 +80,34 @@
             attracts: [],
             caution: false
           },
-      //データ追加errors:とhasError:
+        errors:[],
+      //データ追加hasError:ただし、hasErrorはboolean
         }
       },
       methods:{
         validate(){
           this.errors = []
-          if(){//pushを使う
-            ('氏名は必須です');
-            ('氏名は20文字以内で入力してください');
-            ('性別を選択してください');
+          if()){//名前がなければ
+            this.errors.push('氏名は必須です');
+          } else if(this.contact.yourName.length>20){
+            this.errors.push('氏名は20文字以内で入力してください');
+          }
+          if(!this.contact.gender){
+            this.errors.push('性別を選択してください');
           }
           if（）{
-          ('注意事項にチェックをいれてください');
+            ('注意事項にチェックをいれてください');
           }
         //validate()関数
-        //場合分け、'氏名は必須です''氏名は20文字以内で入力してください''性別を選択してください'
-        //場合分け、'注意事項にチェックをいれてください'
           if(!this.errors.length){
             console.log('送信可能です')
+          }
+        }
       },
       // yourName処理、hasErrorをつかって、場合分け、ゲッターセッターを使う
-      computed:{//get return ,set return
+      computed:{//get return ,set returnでsetはhasNameの判別をする
+        get(){},
+        set(){},
         yourName:{
     })
   </script>

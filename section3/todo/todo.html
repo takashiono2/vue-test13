@@ -10,23 +10,25 @@
     /* リストの点を消す */
     ul{}
      /* テキストに横線 */
-    .done{}
+    .done{
+      text-decoration: line-through;
+    }
   </style>
 </head>
 <body>
   <div id="app">
-    <!--テキストタイプ、newItem関数で制御-->
-    <>
+    <!--テキストタイプ、newItemデータで制御-->
+    <input type="text" v-model="newItem">
     <!--ボタンをクリックしたら追加、addItem関数で制御-->
-    <>追加</>
-    <!--query関数で制御-->
+    <button @click="addItem">追加</button>
+    <!--queryデータで制御-->
     <>検索
   
-    <ul>  <!--todoで配列、filteredListを使う-->
-      <li>  <!--チェックボックス-->
-        <><!--classも条件指定-->
-        <span>{{ todo.item }}</span>
-        <>削除</><!--deleteItemで削除-->
+    <ul>  
+      <li input type="checkbox"><!--todoで配列、filteredListを使う-->
+        <input type="checkbox"><!--チェックボックス-->
+        <span>{{ todo.item }}</span><!--classも条件指定-->
+        <button @click="deleteItem">削除</button><!--deleteItemで削除-->
       </li>
     </ul>
 
@@ -37,15 +39,18 @@
   <script>
     let app = new Vue({
       el:'#app',
-      data(){
-      },
-      methods:{
-        addItem(){
-          }
-        },
+      data(){//v-modelの変数を設定をする
+        return {//つまり、v-modelはformの初期値を無視するので、js側データの初期値設定をする
+          newItem:""
         }
       },
-      computed:{//条件としてindexOfを使う
+      methods:{
+        addItem(){//const todoを定義して、pushに入れる
+        }
+        deleteItem(index){
+        }
+      },
+      computed:{//条件としてstr.indexOf( 検索したい文字, 検索開始位置(任意)),filterを使う
         filteredList(){
           let that = this
           })

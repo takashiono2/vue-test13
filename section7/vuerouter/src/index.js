@@ -16,10 +16,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    components: {
-      default: Home,
-      sub: HomeSub
-    }
+    //コンポーネント設定名前付きHomeSub、名前なし Home,
+  
   },
   {
     path: '/about',
@@ -35,13 +33,10 @@ const routes = [
     component: BookList
   },
   {
-    path: '/book/:id',
+    path: '',//bookのパラメーター表示
     name:'Book',
-    component: BookDetail,
-    props: route => ({ 
-      id: Number(route.params.id),
-      title: route.params.title,
-      content: route.params.content })
+    component: BookDetail,//以下propsを関数でデータをやりとりする。ガイド参照{id,title,content}
+    props: route => ({})
   },
   {
     path:'/item/:id',
@@ -53,8 +48,8 @@ const routes = [
   },
   {
     path:'/user',
-    component: User,
-    children:[
+    component: User,//ネストされたルートにはnameは使えないので、childrenオプションを使う
+
       {
         path:'profile',
         component: UserProfile
@@ -63,11 +58,10 @@ const routes = [
         path: 'post',
         component: UserPost
       }
-    ]
+
   },
-  {
-    path:'*',
-    // redirect:'/',
+  {//pathで該当がなかったら
+    ,
     name:'NotFound',
     component: NotFound
   }
