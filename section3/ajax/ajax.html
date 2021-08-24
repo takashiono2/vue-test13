@@ -24,7 +24,7 @@
   function test(){ console.log('テスト')}
 
     const url = 'https://dog.ceo/api/breeds/image/random'
-    const options = {//オプションはget}
+    const options = { methods : get }
 
     let app = new Vue({
       el:'#app',
@@ -36,8 +36,10 @@
       },
       methods:{
         //非同期で、getDogImage()を実行、responseがあったオブジェクトを画像とする
-        //fetchで非同期ネットワークを取得、.thenでつなげる
-        getDogImage(){
+        //awaitで処理を待つ。fetchで非同期ネットワークを取得、promiseオブジェクトになる。
+        //.thenでつなげ、そのままresponseはjson形式になってしまうので、オブジェクトで扱うようにする
+        //messageに犬の画像があるので、this.dogImageを求める
+        async getDogImage(){
 
         }
       },
@@ -46,7 +48,7 @@
           this.watchDogImage()
         }
       },
-
+        created(){
           //DOMがまだ作られていない状態で、getDogImage()を実行
           this.watchDogImage = _.debounce(this.getDogImage, 1000)
       }

@@ -60,5 +60,14 @@
     <li>#98historyモードの補足</li>
   </ul>
 </details>
+<details>
+  <summary>section8</summary>
+  <ul>
+  </ul>
+    <li>#101Google Books API</li>
+    <li>#102LocalStorageの解説</li>
+    <li>#103Local Storage</li>
+    <li>#</li>
+</details>
 
 

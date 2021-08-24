@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+<div id="app">
+  <input type="text"><!--keywordで紐付け-->
+  <button>検索する</button><!--"search(keyword)をクリックしたら-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+      //v-modelのデータ登録  
+      },
+      methods:{
+        //search(keyword)を非同期処理
+        {
+          this.searchResults = []
+        // クエリーストリングを作成
+        const baseUrl = 'https://www.googleapis.com/books/v1/volumes?'
+          const params = {
+            q: `intitle:${keyword}`,
+            maxResults:40
+          }
+          const queryParams = new URLSearchParams(params)
+          console.log(baseUrl + queryParams)
+
+        // fetchでJSON取得(baseUrl + queryParams)をconst responseとして、thenでつなぐ
+        
+        console.log(response.items)
+        // 必要な情報を配列にpush
+        for(let book of response.items ){
+          let title = book.volumeInfo.title
+          let img = book.volumeInfo.imageLinks
+          let description = book.volumeInfo.description
+          this.searchResults.push({
+            title: title ? title : '',
+            image: img ? img.thumbnail : '',
+            description: description ? description.slice(0, 40) : ''
+          })
+        }
+        
+      }
+      }
+    })
+  </script>
+  
+</body>
+</html>
