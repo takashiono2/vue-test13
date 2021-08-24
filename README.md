@@ -67,6 +67,9 @@
     <li>#101Google Books API</li>
     <li>#102LocalStorageの解説</li>
     <li>#103Local Storage</li>
+    <li>#104Vuetifyのインストール(vue add)</li>
+    <li>#105ファイル・フォルダ整理</li>
+    <li>#106検索画面 fetch, v-card</li>
     <li>#</li>
 </details>
 

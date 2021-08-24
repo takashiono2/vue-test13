@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* ちらつき防止 */
-    {  }
+    [v-cloak]{ /* ちらつき防止 */
+      display: none; 
+    }
     /* リストの点を消す */
-    ul{}
+    ul{
+      list-style: none;
+    }
      /* テキストに横線 */
     .done{
       text-decoration: line-through;
@@ -25,7 +28,9 @@
     <>検索
   
     <ul>  
-      <li input type="checkbox"><!--todoで配列、filteredListを使う-->
+      <li input type="checkbox" 
+        v-for="todo in filteredList" 
+        :key="todo"><!--todoで配列、filteredListを使う-->
         <input type="checkbox"><!--チェックボックス-->
         <span>{{ todo.item }}</span><!--classも条件指定-->
         <button @click="deleteItem">削除</button><!--deleteItemで削除-->
@@ -46,8 +51,10 @@
       },
       methods:{
         addItem(){//const todoを定義して、pushに入れる
+          this.todos.push(this.todo);
         }
         deleteItem(index){
+          this.todos.splice(this.todo,1);
         }
       },
       computed:{//条件としてstr.indexOf( 検索したい文字, 検索開始位置(任意)),filterを使う
