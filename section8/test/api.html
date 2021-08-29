@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,9 @@
 </head>
 <body>
 
-
 <div id="app">
-  <input type="text"><!--keywordで紐付け-->
-  <button>検索する</button><!--"search(keyword)をクリックしたら-->
+  <input type="text" v-model="keyword"><!--keywordで紐付け-->
+  <button @click="search(keyword)">検索する</button><!--"search(keyword)をクリックしたら-->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
   
@@ -18,23 +17,27 @@
     let app = new Vue({
       el:'#app',
       data(){
-      //v-modelのデータ登録  
+        return {
+          keyword: '',//v-modelのデータ登録
+          searchResults:[]
+        }
       },
       methods:{
-        //search(keyword)を非同期処理
+        async search(keyword)//search(keyword)を非同期処理
         {
           this.searchResults = []
         // クエリーストリングを作成
         const baseUrl = 'https://www.googleapis.com/books/v1/volumes?'
-          const params = {
+        const params = {
             q: `intitle:${keyword}`,
             maxResults:40
           }
-          const queryParams = new URLSearchParams(params)
-          console.log(baseUrl + queryParams)
+        const queryParams = new URLSearchParams(params)
+        console.log(baseUrl + queryParams)
 
         // fetchでJSON取得(baseUrl + queryParams)をconst responseとして、thenでつなぐ
-        
+
+        //console.log(response)
         console.log(response.items)
         // 必要な情報を配列にpush
         for(let book of response.items ){

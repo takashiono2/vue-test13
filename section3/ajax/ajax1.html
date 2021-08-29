@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <body>
   <div id="app">
     <button @click="getDogImage">画像を取得</button>
-    <!--imgタグで画像表示-->
+    <img src="dogImage" ><!--imgタグで画像表示-->
   </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
   
@@ -23,9 +23,16 @@
           dogImage: ''
         }
       },
-      //非同期関数getDogImage()、fetch(url, options)でデータを取得するまで待つ
+       {
+
+        
+        }
+      },
+      
+      }
+      //非同期関数getDogImage()の中で、awaitとfetch(url, options)でデータを取得するまで待つ
       //fetchで所得した値は、promiseオブジェクトになるので、thenメソッドでつなげる
-      //respose.json()でオブジェクト形式に変換する
+      //respose.json()でオブジェクト形式に変換する、messgaeオブジェクトを使う。
       //「created」→DOMがまだ作られていない状態「mounted」→DOMが作成された直後の状態
     })
   </script>

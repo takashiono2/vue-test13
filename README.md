@@ -72,5 +72,15 @@
     <li>#106検索画面 fetch, v-card</li>
     <li>#</li>
 </details>
+<details>
+  <summary>section9</summary>
+  <ul>
+  </ul>
+    <li>#117Vuexのインストール</li>
+    <li>#</li>
+    <li>#</li>
+    <li>#</li>
+    <li>#</li>
+</details>
 
 

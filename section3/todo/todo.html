@@ -25,15 +25,15 @@
     <!--ボタンをクリックしたら追加、addItem関数で制御-->
     <button @click="addItem">追加</button>
     <!--queryデータで制御-->
-    <>検索
+    <input v-model="query">検索
   
     <ul>  
       <li input type="checkbox" 
-        v-for="todo in filteredList" 
-        :key="todo"><!--todoで配列、filteredListを使う-->
-        <input type="checkbox"><!--チェックボックス-->
-        <span>{{ todo.item }}</span><!--classも条件指定-->
-        <button @click="deleteItem">削除</button><!--deleteItemで削除-->
+        v-for="(todo,index) in filteredList" 
+        :key="todo.item"><!--todoで配列、filteredListを使う-->
+        <input type="checkbox"　v-model=""><!--チェックボックスなので、オンオフ制御-->
+        <span :class="">{{ todo.item }}</span><!--classも条件指定-->
+        <button @click="deleteItem(index)">削除</button><!--deleteItemで削除-->
       </li>
     </ul>
 
@@ -45,22 +45,27 @@
     let app = new Vue({
       el:'#app',
       data(){//v-modelの変数を設定をする
-        return {//つまり、v-modelはformの初期値を無視するので、js側データの初期値設定をする
-          newItem:""
+        return {//つまり、v-modelはformの初期値を無視するので、js側データの初期値設定をする、todosも
+          newItem:"",
+          //
+          //
         }
       },
       methods:{
-        addItem(){//const todoを定義して、pushに入れる
-          this.todos.push(this.todo);
-        }
+        addItem(){//const todoオブジェクトを定義して、pushに入れる。pushした後も空の処理
+          
+          this.todos.push(todo);
+
+        },
         deleteItem(index){
-          this.todos.splice(this.todo,1);
+          //spliceに引数のindexも使う
         }
       },
       computed:{//条件としてstr.indexOf( 検索したい文字, 検索開始位置(任意)),filterを使う
         filteredList(){
-          let that = this
-          })
+          let that = this//filter関数はコールバック関数でthisの挙動が変わる
+        // computedの中はreturnが必要になる。
+        })
         }
       }
     })
