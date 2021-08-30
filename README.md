@@ -77,9 +77,9 @@
   <ul>
   </ul>
     <li>#117Vuexのインストール</li>
-    <li>#</li>
-    <li>#</li>
-    <li>#</li>
+    <li>#118Vuex stateとmutations</li>
+    <li>#119mutations補足 payload</li>
+    <li>#120actions->mutations->state</li>
     <li>#</li>
 </details>
 
