@@ -80,7 +80,9 @@
     <li>#118Vuex stateとmutations</li>
     <li>#119mutations補足 payload</li>
     <li>#120actions->mutations->state</li>
-    <li>#</li>
+    <li>#121getters</li>
+    <li>#122スプレッド構文</li>
+    <li>#122mapヘルパー(mapActions)</li>
 </details>
 
 
