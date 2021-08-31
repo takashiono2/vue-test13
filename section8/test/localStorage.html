@@ -39,9 +39,9 @@
     if (localStorage.getItem(STORAGE_KEY)) {
       try {
         //localStorage.getItem(STORAGE_KEY)をJSON形式で読み込む、this.booksに代入
-        this.books = ;
+        this.books = JSON.parse(localStorage.getItem(STORAGE_KEY));
       } catch(e) {
-        //なければlocalStorageから削除
+        localStorage.removeItem(STORAGE_KEY); //なければlocalStorageから削除
       }
     }
   },

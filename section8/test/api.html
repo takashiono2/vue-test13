@@ -18,7 +18,7 @@
       el:'#app',
       data(){
         return {
-          keyword: '',//v-modelのデータ登録
+          keyword: '',
           searchResults:[]
         }
       },
@@ -36,7 +36,8 @@
         console.log(baseUrl + queryParams)
 
         // fetchでJSON取得(baseUrl + queryParams)をconst responseとして、thenでつなぐ
-
+        const response = await fetch(baseUrl + queryParams)
+        .then(response => response.json())
         //console.log(response)
         console.log(response.items)
         // 必要な情報を配列にpush

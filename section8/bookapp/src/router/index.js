@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+//routerをimport
 import BookIndex from '@/pages/BookIndex'
 import BookSearch from '@/pages/BookSearch'
 import BookEdit from '@/pages/BookEdit'
 
-Vue.use(VueRouter)
+//routerを使う宣言
 
-const routes = [
+//routesで定義 = [
   {
     path: '/',
     name: 'BookIndex',
@@ -34,4 +34,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+//router外部でを使う宣言
