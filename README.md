@@ -65,24 +65,25 @@
   <ul>
   </ul>
     <li>#101Google Books API</li>
-    <li>#102LocalStorageの解説</li>
+    <!-- <li>#102LocalStorageの解説</li>
     <li>#103Local Storage</li>
     <li>#104Vuetifyのインストール(vue add)</li>
     <li>#105ファイル・フォルダ整理</li>
-    <li>#106検索画面 fetch, v-card</li>
+    <li>#106検索画面 fetch, v-card</li> -->
     <li>#</li>
 </details>
 <details>
   <summary>section9</summary>
   <ul>
-  </ul>
     <li>#117Vuexのインストール</li>
     <li>#118Vuex stateとmutations</li>
     <li>#119mutations補足 payload</li>
     <li>#120actions->mutations->state</li>
     <li>#121getters</li>
     <li>#122スプレッド構文</li>
-    <li>#122mapヘルパー(mapActions)</li>
+    <li>#123mapヘルパー(mapActions)</li>
+    <li>#124モジュール分割と名前空間(namespace)</li>
+  </ul>
 </details>
 
 
