@@ -69,7 +69,7 @@
     <li>#103Local Storage</li>
     <li>#104Vuetifyのインストール(vue add)</li>
     <li>#105ファイル・フォルダ整理</li>
-    <!-- <li>#106検索画面 fetch, v-card</li> -->
+    <li>#106検索画面 fetch, v-card</li>
     <li>#</li>
 </details>
 <details>
