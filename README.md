@@ -71,7 +71,7 @@
     <li>#105ファイル・フォルダ整理</li>
     <li>#106検索画面 fetch, v-card</li>
     <li>#107App.vueからlocalStorageへ保存</li>
-    <!-- <li>#108search->editへの移動と表示</li> -->
+    <li>#108search->editへの移動と表示</li>
 </details>
 <details>
   <summary>section9</summary>

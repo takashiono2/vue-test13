@@ -3,7 +3,9 @@
   <Header/>
     <v-main>
       <v-container>
-        <router-view @add-book-list="addBook"/>
+        <router-view 
+        :books="books"
+        @add-book-list="addBook"/><!--booksで紐づける-->
       </v-container>
     </v-main>
   <Footer/>
@@ -49,6 +51,7 @@ export default {
       });
       // this.newBook = '';
       this.saveBooks();
+      this.gotoEditPage(this.books.slice(-1)[0].id);//booksの最後のidを引数に
     },
     removeBook(x) {
       this.books.splice(x, 1);
@@ -59,6 +62,9 @@ export default {
       //localStorageにkey,value形式で保存
       const parsed = JSON.stringify(this.books);
       localStorage.setItem(STORAGE_KEY, parsed);
+    },
+    gotoEditPage(id){
+      this.$router.push(`/edit/${id}`)///edit/id(変数)に飛ぶ
     }
   }
 }
