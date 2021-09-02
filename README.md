@@ -63,7 +63,6 @@
 <details>
   <summary>section8</summary>
   <ul>
-  </ul>
     <li>#101Google Books API</li>
     <li>#102LocalStorageの解説</li>
     <li>#103Local Storage</li>
@@ -75,6 +74,8 @@
     <li>#109beforeRouteEnter + $nextTick</li>
     <li>#110BookEdit カレンダーなど </li>
     <li>#111BookEdit->BookIndex </li>
+    <li>#112一覧画面(BookIndex)</li>
+  </ul>
 </details>
 <details>
   <summary>section9</summary>

@@ -2,15 +2,15 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <v-card class="mx-auto"><!--margin左右等間隔-->
+        <v-card class="mx-auto">
           <v-row>
             <v-col cols="4">
               <v-img :src="book.image"></v-img>
             </v-col>
             <v-col cols="8">
-              <v-card-title><!--タイトル-->
+              <v-card-title>
                 タイトル：{{ book.title }}
-              </v-card-title><!--タイトル閉じ-->
+              </v-card-title>
                 読んだ日：
                   <v-menu
                     v-model="menu"
@@ -41,7 +41,8 @@
                 </v-textarea>
                 <v-card-actions>
                   <v-btn color="secondary" to="/">一覧へ戻る</v-btn>
-                  <v-btn color="info">保存する</v-btn>
+                  <v-btn color="info"
+                  @click="updateBookInfo">保存する</v-btn>
                 </v-card-actions>
             </v-col>
           </v-row>
@@ -60,15 +61,28 @@ export default {
   data(){
     return{
       book:'',
-      date: new Date().toISOString().substr(0, 10),
+      date:'',
       menu: false
     }
   },
-  beforeRouteEnter(to, from, next){
+  methods:{
+    updateBookInfo(){
+      this.$emit('update-book-info',{
+        id: this.$route.params.id,
+        readData: this.date,
+        memo: this.book.memo
+      })
+    }
+  },
+  beforeRouteEnter(to, from, next){//コンポーネントを描画するルートが確立する前に呼ばれる。
     next(vm => {
       vm.$nextTick(()=>{
         vm.book = vm.books[vm.$route.params.id]
-        console.log(vm.book)
+        if(vm.book.readDate){
+          vm.date = vm.book.readDate
+        }else{
+          vm.date = new Date().toISOString().substr(0, 10)
+        }
       })
     })
   }

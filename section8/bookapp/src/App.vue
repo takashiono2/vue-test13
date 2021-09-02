@@ -5,7 +5,8 @@
       <v-container>
         <router-view 
         :books="books"
-        @add-book-list="addBook"/><!--booksで紐づける-->
+        @add-book-list="addBook"
+        @update-book-info="updateBookInfo" />
       </v-container>
     </v-main>
   <Footer/>
@@ -58,13 +59,23 @@ export default {
       this.saveBooks();
     },
     saveBooks() {
-      //保存前に、this.booksをJSON形式に変換し、const parsedに代入
-      //localStorageにkey,value形式で保存
       const parsed = JSON.stringify(this.books);
       localStorage.setItem(STORAGE_KEY, parsed);
     },
+    updateBookInfo(e){
+      const updateInfo = {
+        id: e.id,
+        readDate: e.memo,
+        title: this.books[e.id].title,
+        image: this.books[e.id].image,
+        description: this.books[e.id],description
+      }
+      this.books.splice(e.id,1,updateInfo)
+      this.saveBooks()
+      this.$router.push('/')
+    },
     gotoEditPage(id){
-      this.$router.push(`/edit/${id}`)///edit/id(変数)に飛ぶ
+      this.$router.push(`/edit/${id}`)
     }
   }
 }

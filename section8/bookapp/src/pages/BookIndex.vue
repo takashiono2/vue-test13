@@ -18,9 +18,9 @@
               感想：{{book.memo}}
               <v-spacer></v-spacer>
               <v-card-actions>
-                <v-btn :to="{name: 'BookEdit', params: {id: book.id}}"
+                <v-btn :to="{name: 'BookEdit',params:{id: book.id}}"
                 color="indigo" fab small dark
-                >
+                ><!--名前付きルーター　BookEdit　book.id-->
                 <v-icon>mdi-pencil</v-icon>
                 </v-btn>           
               </v-card-actions>
