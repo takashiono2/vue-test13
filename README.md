@@ -75,6 +75,8 @@
     <li>#110BookEdit カレンダーなど </li>
     <li>#111BookEdit->BookIndex </li>
     <li>#112一覧画面(BookIndex)</li>
+    <li>#113BookEdit dateの修正</li>
+    <li>#114LocalStorage一括削除</li>
   </ul>
 </details>
 <details>
@@ -90,5 +92,3 @@
     <li>#124モジュール分割と名前空間(namespace)</li>
   </ul>
 </details>
-
-

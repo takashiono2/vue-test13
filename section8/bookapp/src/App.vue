@@ -1,6 +1,8 @@
 <template>
   <v-app>
-  <Header/>
+  <Header
+    @delete-local-storage="deleteLocalStorage"
+    />
     <v-main>
       <v-container>
         <router-view 
@@ -41,7 +43,7 @@ export default {
     }
   },
   methods: {
-    addBook(e) {//子コンポーネントから渡ってくる値をうけとる。
+    addBook(e) {
       this.books.push({
         id: this.books.length,
         title: e.title,
@@ -76,7 +78,16 @@ export default {
     },
     gotoEditPage(id){
       this.$router.push(`/edit/${id}`)
-    }
+    },
+    deleteLocalStorage(){
+      const isDeleted = '削除してもいいですか？'
+      if(window.confirm(isDeleted)){//警告ダイアログ
+        localStorage.setItem(STORAGE_KEY,'');//STORAGE_KEYで空を登録
+        localStorage.removeItem(STORAGE_KEY);//STORAGE_KEYを削除
+        this.books=[]
+        window.location.reload();//再読み込み
+      }
+    },
   }
 }
 </script>

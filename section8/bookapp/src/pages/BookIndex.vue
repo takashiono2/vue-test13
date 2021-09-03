@@ -19,8 +19,8 @@
               <v-spacer></v-spacer>
               <v-card-actions>
                 <v-btn :to="{name: 'BookEdit',params:{id: book.id}}"
-                color="indigo" fab small dark
-                ><!--名前付きルーター　BookEdit　book.id-->
+                  color="indigo" fab small dark
+                >
                 <v-icon>mdi-pencil</v-icon>
                 </v-btn>           
               </v-card-actions>
