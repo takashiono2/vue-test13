@@ -98,7 +98,9 @@
     <li>#126Vue.js3の特徴</li>
     <li>#127Vue.js3のインストール(CDN)</li>
     <li>#128Vue.js devTools (ver6.x)</li>
-    <li>#</li>
+    <li>#129Vue.js2と同じコードの確認</li>
+    <li>#130Vue.js3のインストール(NPM)</li>
+    <li>#131エントリーポイントの確認</li>
     <li>#</li>
   </ul>
 </details>
