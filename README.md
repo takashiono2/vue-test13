@@ -101,6 +101,13 @@
     <li>#129Vue.js2と同じコードの確認</li>
     <li>#130Vue.js3のインストール(NPM)</li>
     <li>#131エントリーポイントの確認</li>
+    <li>#132Provide/Inject 長距離Props</li>
+    <li>#133Teleport</li>
+    <!-- <li>#134CompositionAPI・setup()の実行タイミング</li>
+    <li>#135setup()でthisが使えない件</li>
+    <li>#136setup()の戻り値</li> -->
+    <!-- <li>#</li>
     <li>#</li>
+    <li>#</li> -->
   </ul>
 </details>

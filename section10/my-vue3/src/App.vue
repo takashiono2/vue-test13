@@ -1,10 +1,25 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/children">Children</router-link> |
+    <router-link to="/teleport-test">Teleport</router-link>
   <router-view/>
+  </div>
 </template>
+
+<script>
+export default{
+  data(){
+    return{}
+  },
+  provide(){
+    return{
+      userName:'親で設定した値'
+    }
+  }
+}
+</script>
 
 <style>
 #app {
