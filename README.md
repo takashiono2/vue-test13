@@ -110,7 +110,7 @@
     <li>#138reactive()</li>
     <li>#139toRefs()</li>
     <li>#140メソッド</li>
-    <li>#</li>
+    <li>#141computed()</li>
     <li>#</li>
     <li>#</li>
   </ul>
