@@ -111,7 +111,7 @@
     <li>#139toRefs()</li>
     <li>#140メソッド</li>
     <li>#141computed()</li>
-    <li>#</li>
-    <li>#</li>
+    <li>#142watch()</li>
+    <li>#143watchEffect()</li>
   </ul>
 </details>
