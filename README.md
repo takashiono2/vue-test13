@@ -113,5 +113,9 @@
     <li>#141computed()</li>
     <li>#142watch()</li>
     <li>#143watchEffect()</li>
+    <li>#144ライフサイクルフック</li>
+    <li>#145setup(props)</li>
+    <li></li>
+    <li></li>
   </ul>
 </details>

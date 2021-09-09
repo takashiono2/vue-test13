@@ -13,7 +13,7 @@
     <button @click="btnClick">クリック</button>
     <p>computed: {{ totalPrice }} </p>
     <div>watch:<input v-model="search"></div>
-    <div>watchEffect:<input v-model="searchEffect"></div>
+    <div>watchEffect:<input v-model="searchEffect"></div><!--watchEffect:を表示使う-->
   </div>
 </template>
 
@@ -56,11 +56,11 @@ export default {
       console.log(`new: ${newValue}`);
     })
 
-    const searchEffect = ref('')
+    const searchEffect = ref('') //searchEffectをリアクティブで使う
     watchEffect(()=>{
       console.log(`watchEffect: ${searchEffect.value}`)
-    })
-
+    })//watchEffectを使う
+    
 
     console.log('setup')
     console.log(this) //undefined
