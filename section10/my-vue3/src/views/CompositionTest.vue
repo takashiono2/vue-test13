@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import {ref,reactive,toRefs,computed,watch,watchEffect} from 'vue'//importに追加
+import {ref,reactive,toRefs,computed,watch,watchEffect,onMounted} from 'vue'//importに追加
 export default {
   
   setup(){
@@ -61,6 +61,9 @@ export default {
       console.log(`watchEffect: ${searchEffect.value}`)
     })//watchEffectを使う
     
+    onMounted(()=>{//setupの中でcreatedよりタイミングを遅らせる時に使う
+      console.log('onMounted')
+    })
 
     console.log('setup')
     console.log(this) //undefined
