@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caroucel</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+  <div id="app">
+    <section class="carousel">
+
+      <div class="carousel__main">
+        <transition name="active">
+        <!--activeでトランジション、key（何番目のidか）で紐付け、v-showで条件一致の時表示、イメージは配列からもってくる-->
+          <div class="carousel__main"
+          :key=
+          v-show=
+          >
+            <img :src="images[id].img">
+          </div>
+        </transition>
+      </div>
+      <div @click="prev" class="carousel__prev"><i class="fas fa-angle-left fa-5x"></i></div>
+      <div @click="next" class="carousel__next"><i class="fas fa-angle-right fa-5x"></i></div>
+      <ul class="carousel__thumbnails">
+        <!--配列、クラスも配列で変化するので紐付け、currentをクリックした時-->
+        <li v-for="(image,id) in images" 
+        :key="image.id" 
+        @click="">
+          <img :src="image.img">
+        </li>
+      </ul>
+    </section>
+  </div>  
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {//activeとidの関係性
+          active: 0,
+          images: [
+            {id:0, img:'images/image000.jpg'},
+            {id:1, img:'images/image001.jpg'},
+            {id:2, img:'images/image002.jpg'},
+            {id:3, img:'images/image003.jpg'},
+            {id:4, img:'images/image004.jpg'},
+            {id:5, img:'images/image005.jpg'},
+            {id:6, img:'images/image006.jpg'}
+          ]//dataを定義{id:0, img:'images/image000.jpg'}
+        }
+      },
+      //currentボタンを押すと、prev()関数、next()条件を条件設定
+    methods:{ //引数idの制御
+      current(//引数もいれる){
+        this.active = id
+      },
+    prev(){//this.active数の制御activeが減る方向,もし、マイナスにいったら最大にして、そうでないなら減らす
+      if(this.active <= 0){
+        this.active = this.images.length -1
+       } else {
+        
+    },
+    next(){//this.active数の制御activeが増える方向、最大より多いなら0に戻す、そうでないなら増やす
+      if(this.active >= this.images.length - 1)
+    }
+
+    
+    //自動的にインスタンス生成する。createdはdata生成のタイミング要素は生成しないタイミングなので、
+    //非同期通信で取得したい時。mountedは、DOM生成のタイミング
+    mounted()
+    { //setIntervalの中でthisが変わるので、let that = thisを変数thatに置き換えて、4秒インターバル
+      let that = this
+      ;
+    }
+    })
+  </script>
+</body>
+</html>
