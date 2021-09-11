@@ -1,13 +1,14 @@
 <template>
   <div>
     <p>PropsEmitTest</p>
-    <p>{{ setupBooks }}</p>
+    <div>{{ setupBooks }}</div>
     <ul>
       <li v-for="book in setupBooks" :key="book">
         {{ book.title }}
       </li>
     </ul>
-    <p>{{ dataBooks }}</p>
+    <div>{{ dataBooks }}</div>
+    <button @click="emitTest">emitテスト</button>
   </div>
 </template>
 
@@ -17,9 +18,16 @@ export default {
     setupBooks: Array,
     dataBooks: Array
   },
-  setup(props){
+  setup(props,context){
     console.log(props.setupBooks[0].title)
     console.log(props.dataBooks)
+
+    const emitTest = () =>{
+      context.emit('custom-event','子の値')
+    }
+    return {
+      emitTest
+    } 
   }
 }
 </script>

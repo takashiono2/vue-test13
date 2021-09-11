@@ -115,7 +115,10 @@
     <li>#143watchEffect()</li>
     <li>#144ライフサイクルフック</li>
     <li>#145setup(props)</li>
-    <li></li>
-    <li></li>
+    <li>#146emit (context.emit)</li>
+    <li>#</li>
+    <li>#</li>
+    <li>#</li>
+    <li>#</li>
   </ul>
 </details>

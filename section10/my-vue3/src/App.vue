@@ -6,7 +6,11 @@
     <router-link to="/teleport-test">Teleport</router-link> |
     <router-link to="/composition-test">Composition</router-link> |
     <router-link to="/props-emit-test">PropsEmit</router-link>
-  <router-view :setupBooks="setupBooks" :dataBooks="dataBooks"/>
+  <router-view 
+    :setupBooks="setupBooks" 
+    :dataBooks="dataBooks"
+    @custom-event="parentMethod"
+  />
   </div>
 </template>
 
@@ -25,7 +29,7 @@ export default{
           author: 'setup著者2'
         }
     ])
-    return{
+    return {
       setupBooks
     }
   },
@@ -41,6 +45,11 @@ export default{
           author: 'data著者2'
         }
       ]
+    }
+  },
+  methods:{
+    parentMethod(e){
+      console.log(e)
     }
   },
   provide(){
