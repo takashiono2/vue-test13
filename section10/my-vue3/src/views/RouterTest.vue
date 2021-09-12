@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { useRouter,useRoute } from 'vue-router'
+import { useRouter,useRoute,onBeforeRouteLeave } from 'vue-router'
 export default {
   setup(){
     const router = useRouter()//ルーター機能を管理するrouter
@@ -20,6 +20,10 @@ export default {
       console.log(route.path)
     }
     
+    onBeforeRouteLeave((to,from)=>{
+      console.log(`to:${to}`)
+      console.log(`from:${from}`)
+    })
   return { goHome,checkRoutePath }//setup関数はreturnで返す
   }
 
