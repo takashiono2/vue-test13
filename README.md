@@ -120,7 +120,8 @@
     <li>#148合成関数(script内)</li>
     <li>#149合成関数(モジュール化)</li>
     <li>#150setup内でvue-router</li>
-    <li>#</li>
-    <li>#</li>
+    <li>#151setup内でのナビゲーションガード</li>
+    <li>#152setup内でvuex その1</li>
+    <li>#153setup内でvuex その2</li>
   </ul>
 </details>
