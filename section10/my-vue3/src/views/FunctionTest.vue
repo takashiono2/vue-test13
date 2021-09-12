@@ -15,20 +15,24 @@
 </template>
 
 <script>
-import { reactive, computed } from 'vue'
-const useCounter = item =>{
-  const increment = () => {
-    item.amount++;
-  }
-  const decrement = () => {
-    item.amount--;
-  }
-  const totalPrice = computed(() => {
-    return item.price * item.amount
-  })
-return { increment,decrement,totalPrice }
-  
-}
+import { reactive } from 'vue' //何をimportするか
+import useCounter from '@/composables/useCounter.js'//何のファイルをimportするか
+
+// export default function useCounter(item){
+  // const useCounter = item =>{
+  //   const increment = () => {
+  //     item.amount++;
+  //   }
+  //   const decrement = () => {
+  //     item.amount--;
+  //   }
+  //   const totalPrice = computed(() => {
+  //     return item.price * item.amount
+  //   })
+  // return { increment,decrement,totalPrice }
+    
+  // }
+// }
 
 export default {
   setup(){

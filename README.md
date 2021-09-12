@@ -118,6 +118,8 @@
     <li>#146emit (context.emit)</li>
     <li>#147CompositionFunction(合成関数)の概要</li>
     <li>#148合成関数(script内)</li>
+    <li>#149合成関数(モジュール化)</li>
+    <li>#150setup内でvue-router</li>
     <li>#</li>
     <li>#</li>
   </ul>
